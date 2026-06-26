@@ -20,3 +20,6 @@ zig-out/
 discover.bin
 .vscode
 random60mb.bin
+# Added by goreleaser init:
+dist/
+.intentionally-empty-file.o

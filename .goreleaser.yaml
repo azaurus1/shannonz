@@ -1,0 +1,47 @@
+version: 2
+builds:
+  # You can have multiple builds defined as a yaml list
+  - #
+    # ID of the build.
+    #
+    # Default: Project directory name.
+    id: "shannonz"
+
+    # Use zig.
+    builder: zig
+
+    # Binary name.
+    # Can be a path (e.g. `bin/app`) to wrap the binary in a directory.
+    #
+    # Default: Project directory name.
+    binary: shannonz
+
+    # List of targets to be built, in Zig's format.
+    # Default: [ "x86_64-linux", "x86_64-macos", "x86_64-windows", "aarch64-linux", "aarch64-macos" ]
+    targets:
+      - x86_64-linux-gnu
+
+    # Path to project's (sub)directory containing the code.
+    # This is the working directory for the Zig build command(s).
+    #
+    # Default: '.'.
+    dir: .
+
+    # Sets the command to run to build.
+    # Can be useful if you want to build tests, for example,
+    # in which case you can set this to "test".
+    # It is safe to ignore this option in most cases.
+    #
+    # Default: build.
+    command: build
+
+    # Custom flags.
+    #
+    # Templates: allowed.
+    # Default: "-Doptimize=ReleaseSafe".
+    flags:
+      - --release=fast
+
+    # If true, skip the build.
+    # Useful for library projects.
+    skip: false
