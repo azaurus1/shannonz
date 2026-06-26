@@ -13,6 +13,8 @@ jobs:
         with:
           fetch-depth: 0
       - uses: https://codeberg.org/mlugg/setup-zig@v2
+        with:
+          version: 0.16.0
 
       - name: GoReleaser Action
         uses: goreleaser/goreleaser-action@v7.2.2
